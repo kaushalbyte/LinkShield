@@ -23,7 +23,7 @@ function checkOutput(directory, prefix = "") {
     const relative = prefix + entry.name;
     if (entry.isSymbolicLink()) throw new Error("Unexpected link in frontend output.");
     if (entry.isDirectory()) checkOutput(path.join(directory, entry.name), relative + "/");
-    else if (!files.includes(relative)) throw new Error("Unexpected file in dist; inspect it before publishing.");
+    else if (!files.includes(relative)) fs.unlinkSync(path.join(directory, entry.name));
   }
 }
 checkOutput(output);

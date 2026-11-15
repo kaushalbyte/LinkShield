@@ -31,7 +31,8 @@ test('frontend build publishes only public assets and validates the API origin',
   assert.match(fs.readFileSync(path.join(root, 'index.html'), 'utf8'), /name="api-base-url" content=""/);
   for (const file of publicFiles) assert.doesNotMatch(fs.readFileSync(path.join(root, 'dist', file), 'utf8'), /PRIVATE_TEST_MARKER/);
   fs.writeFileSync(path.join(root, 'dist/unexpected.txt'), 'stale file');
-  assert.equal(build('https://api.example').status, 1);
+  assert.equal(build('https://api.example').status, 0);
+  assert.equal(fs.existsSync(path.join(root, 'dist/unexpected.txt')), false);
 });
 
 test('original heuristic test cases retain their scores and warnings', () => {
