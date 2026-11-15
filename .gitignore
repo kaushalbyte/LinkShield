@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+node_modules/
+*.log
+coverage/
+.DS_Store
+dist/
+.netlify/
+*.pem
+*.key
+*.p12
+*.pfx

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="api-base-url" content="" />
+    <title>LinkShield</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/analyzer.js"></script>
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <div class="header">
+      <h2 id="title">LinkShield</h2>
+    </div>
+    <h1 id="heading">Think before you click.</h1>
+    <p id="description">Check a link before you open it.<br />
+      <small>Checks can miss threats or flag harmless sites.<br />
+        <a href="https://developers.google.com/safe-browsing/v4/advisory" rel="noreferrer">Advisory provided by Google</a> · <a href="privacy.html">Privacy &amp; terms</a>
+      </small>
+    </p>
+    <div class="container">
+      <h2 id="urlHeading">Enter a URL to check:</h2>
+      <form id="urlForm">
+        <input
+          type="url"
+          id="urlInput"
+          placeholder="https://example.com"
+          aria-labelledby="urlHeading"
+          required
+        />
+        <button type="button" id="scanbtn">Check Link</button>
+      </form>
+    </div>
+
+    <div class="result" id="result" hidden>
+      <span class="resultIcon" id="resultIcon" aria-hidden="true">!</span>
+
+      <div>
+        <h2 id="resultTitle"></h2>
+        <h2 id="low-Risk">Low Risk Indicators</h2>
+        <h2 id="moderate-Risk">Moderate Risk Indicators</h2>
+        <h2 id="high-Risk">High Risk Indicators</h2>
+
+        <p id="resultURL"></p>
+
+        <p id="riskScore"></p>
+        <p id="apiStatus" aria-live="polite"></p>
+        <p id="googleAttribution" hidden>
+          <small
+            ><a
+              href="https://developers.google.com/safe-browsing/v4/advisory"
+              rel="noreferrer"
+              >Advisory provided by Google</a
+            >. Google warnings may be incorrect; a missing match does not
+            guarantee safety.</small
+          >
+        </p>
+
+        <ul id="warningList"></ul>
+      </div>
+    </div>
+  </body>
+</html>
