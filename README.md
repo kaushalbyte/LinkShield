@@ -2,6 +2,9 @@
 
 LinkShield is a beginner-built, non-commercial learning project that checks a URL for suspicious patterns and known Google Safe Browsing threats. It combines an independent heuristic score with a separate database verdict. Neither a low score nor an absent database match guarantees safety.
 
+<img width="955" height="442" alt="linkshield" src="https://github.com/user-attachments/assets/2ea7e308-2d45-46f7-9b94-83ad74102022" />
+
+
 ## Features
 
 - Responsive dark frontend built with HTML, CSS and plain JavaScript.
